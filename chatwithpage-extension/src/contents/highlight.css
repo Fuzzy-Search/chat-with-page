@@ -1,0 +1,9 @@
+mark{
+  background: rgba(255, 255, 0, 0.3);
+}
+
+mark.current{
+  background: yellow;
+  color: black;
+  text-decoration: none;
+}

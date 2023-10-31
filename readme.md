@@ -1,49 +1,97 @@
-## Welcome Developers and Contributors
+## README: Enhanced Version
 
-### Getting Started
+---
 
-To set up the development environment, install the dependencies and start the development server:
+### 📌 Table of Contents
+1. [Introduction](#introduction)
+2. [Getting Started](#getting-started)
+3. [Architecture Overview](#architecture-overview)
+4. [Production Build](#production-build)
+5. [Running in Chrome](#running-in-chrome)
+6. [Contributing](#contributing)
+7. [Running Local Llama](#running-local-llama)
+8. [Tech Stack](#tech-stack)
 
+---
+
+### 🌟 Introduction
+Welcome Developers and Contributors! This README is designed to provide a structured guide to help you dive into this project seamlessly.
+
+---
+
+### 🚀 Getting Started – 3 steps
+
+#### Pre-requisites
+- Ensure you have `pnpm` installed.
+
+#### 1. Installation and Running of the endponoint (internal requirement)
 ```bash
+# go to api-endpoint folder
+cd api-endpoint
+
+# Install dependencies
 pnpm install
-# ->
+
+# Start the development server
 pnpm run dev
 ```
 
-Launch your preferred browser and load the development build suitable for your context. For instance, if you're developing for Chrome using manifest v3, navigate to: `build/chrome-mv3-dev`.
+🌐 **API streaming server is ready**: This is a core of streaming outputs directly from LLM model into API based version!
 
-### Understanding the Extension
 
-To help you understand the workings of the extension, we are working on:
-
-- A detailed video walkthrough
-- A comprehensive diagrammatic representation
-- A textual explanation of the process
-
-### Building for Production
-
-To create a production build of the extension, run:
-
+#### 2. Chrome extension set up!
 ```bash
+# go to chrome extension folder
+cd chatwithpage-extension
+
+# Install dependencies
+pnpm install
+
+# Get a build of the chrome extension ready
 pnpm build
 ```
+📂 **Output Directory**: All production files will be located in the `build` folder.
 
-The production-ready files will be located in the "build" folder.
 
-### Loading the Extension in Chrome
 
-To load the extension in Chrome, navigate to chrome://extensions and enable Developer Mode.
+### 3.  🐪 Running Local Llama
 
-![Alt text](image.png)
+#### Steps:
+1. **Model Installation**: Go to [ollama.ai](https://ollama.ai/) and follow installation instructions.
+2. **Run Model**: `ollama run mistral`
+3. **Server Setup**: Install `litellm` via pip: `pip install litellm`
+4. **Start Server**: 
+   ```bash
+   litellm --model ollama/mistral --api_base http://localhost:11434 --temperature 0.3 --max_tokens 2048
+   ```
 
-Click on "Load Unpacked" and navigate to your extension's build/chrome-mv3-dev (or build/chrome-mv3-prod) directory.
 
-### Contributing to chrome-search
+---
 
-We welcome contributions! Here's our current to-do list:
+### 🖥 Installing extension in Chrome
 
-- Replace local-stream repo with a more compact Node.js implementation of the streaming, ensuring compatibility with Vercel AI and OpenAI npm modules.
+1. **Navigate**: Go to `chrome://extensions`.
+2. **Enable Developer Mode**.
+3. **Load Extension**: Click "Load Unpacked" and navigate to `build/chrome-mv3-dev` or `build/chrome-mv3-prod`.
 
-### Built with Plasmo
+![Loading Extension](assets/image.png)
 
-This extension is built with Plasmo. Learn more about it [here](https://docs.plasmo.com/).
+---
+
+### 🤝 Contributing
+
+#### Current To-Do List:
+- Streamline local-stream repo.
+- Ensure compatibility with Vercel AI and OpenAI npm modules.
+
+---
+
+### 💡 Tech Stack
+
+This extension is proudly built with [Plasmo](https://docs.plasmo.com/).
+
+---
+
+📘 **Note**: Your collaboration is highly valued. Let's build something awesome together!
+
+---
