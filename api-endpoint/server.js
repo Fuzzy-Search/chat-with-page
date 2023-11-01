@@ -1,19 +1,21 @@
-import OpenAI from 'openai';
-import { OpenAIStream, StreamingTextResponse } from 'ai';
+// Import necessary modules
+const express = require('express');
+const OpenAI = require('openai');
+const { OpenAIStream, streamToResponse } = require('ai');
 
+
+// Initialize OpenAI
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-  baseURL: 'http://0.0.0.0:8000/v1/'
+  apiKey: process.env.OPENAI_API_KEY, // you dont need it! just a placeholder
+  baseURL: 'http://0.0.0.0:8000/v1/' // url where you local model is running!
 });
 
+const app = express();
+app.use(express.json({ type: '*/*' }));
 
-// Set the runtime to edge for best performance
-export const runtime = 'edge';
-
-async function createChatCompletion(input: string, context: string) {
-  // Ask OpenAI for a streaming completion given the prompt
+async function createChatCompletion(input, context) {
   return await openai.chat.completions.create({
-    model: 'gpt-3.5-turbo', // just for the templates sake
+    model: 'gpt-3.5-turbo',
     stream: true,
     messages: [
       {
@@ -51,18 +53,27 @@ source: doc 2`,
 }
 
 
-export async function POST(req: Request) {
-  const { messages, context } = await req.json();
-  const input = messages.reverse().find((message: { role: string }) => message.role === 'user')?.content;
-  if (!input) {
-    return new Response('No input provided', { status: 400 });
+app.post('/', async (req, res) => {
+  try {
+    const { messages, context } = await req.body
+    const input = messages.reverse().find(msg => msg.role === 'user')?.content;
+    if (!input) {
+      return res.status(400).send('No input provided');
+    }
+    
+    const response = await createChatCompletion(input, context);
+
+    const stream = OpenAIStream(response);
+    streamToResponse(stream, res);
+
+  } catch (error) {
+    console.error(`Internal Server Error: ${error.message}`);
+    res.status(500).send(`Internal Server Error: ${error.message}`);
   }
-  console.log(`Input: ${context}`);
+});
 
-  const response = await createChatCompletion(input, context);
+// Server Listening
+app.listen(3000, () => {
+  console.log('Server running on http://localhost:3000/');
+});
 
-  // Convert the response into a friendly text-stream
-  const stream = OpenAIStream(response);
-  // Respond with the stream
-  return new StreamingTextResponse(stream);
-}
