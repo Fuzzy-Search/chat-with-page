@@ -95,3 +95,7 @@ This extension is proudly built with [Plasmo](https://docs.plasmo.com/).
 📘 **Note**: Your collaboration is highly valued. Let's build something awesome together!
 
 ---
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Fuzzy-Search/chat-with-page&type=Date)](https://star-history.com/#Fuzzy-Search/chat-with-page&Date)
