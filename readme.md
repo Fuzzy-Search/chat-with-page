@@ -2,7 +2,7 @@
 
 ---
 
-### 📌 Table of Contents
+## 📌 Table of Contents
 1. [Introduction](#introduction)
 2. [Getting Started](#getting-started)
 3. [Architecture Overview](#architecture-overview)
@@ -14,17 +14,20 @@
 
 ---
 
-### 🌟 Introduction
+## 🌟 Introduction
 Welcome Developers and Contributors! This README is designed to provide a structured guide to help you dive into this project seamlessly.
 
 ---
 
-### 🚀 Getting Started – 3 steps
+## 🚀 Getting Started – 3 steps
 
-#### Pre-requisites
-- Ensure you have `pnpm` installed.
+# MACOS/LINUX only! Windows coming soon
 
-#### 1. Installation and Running of the endponoint (internal requirement)
+### ❗Pre-requisites❗
+- Ensure you have [`pnpm`](https://pnpm.io/installation) or [`npm`](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) packages installed on the computer
+- Ensure you have [`node.js`](https://nodejs.org/en/download) installed on your computer.
+
+### 1. Installation and Running of the endponoint (internal requirement)
 ```bash
 # go to api-endpoint folder
 cd api-endpoint
