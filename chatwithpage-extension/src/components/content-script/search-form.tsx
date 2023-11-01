@@ -46,7 +46,7 @@ export const SearchOnPageForm = ({ initialPrompt }: SearchFormProps) => {
 
     const { input, setInput, handleInputChange, handleSubmit, messages } =
     useChat({
-        api: "http://localhost:3000/api/chat",
+        api: "http://localhost:3000",
         body: {
           context: contextText,
         }
