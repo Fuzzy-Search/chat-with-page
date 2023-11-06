@@ -13,6 +13,7 @@ import type { PlasmoCSConfig } from "plasmo"
 
 import { SearchOnPageForm } from "src/components/content-script/search-form"
 import { processPage } from "src/core/process_page"
+import { clearHighlights } from "~utils/tools";
 
 
 const Page: FC<
@@ -49,7 +50,7 @@ export const getRootContainer = () => {
     iframe.style.backgroundColor = "transparent";
     iframe.style.border = 'none'
     iframe.style.height = "300px";
-    iframe.style.width = "350px";
+    iframe.style.width = "500px";
     iframe.style.display = "none";
     
     document.body.insertAdjacentElement("beforebegin", iframe);
@@ -80,6 +81,7 @@ export const render: PlasmoRender<PlasmoCSUIJSXContainer> = async ({
     const Wrapper = () => {
         const [showAI, setShowAI] = useState(false)
         useEffect(() => {
+          clearHighlights()
             if (showAI) { 
                 console.log("Sent info to process page")
                 processPage(window.location.href)
@@ -94,8 +96,6 @@ export const render: PlasmoRender<PlasmoCSUIJSXContainer> = async ({
             }
         }
         chrome.runtime.onMessage.addListener(messageListener)
-        
-        
         
         return (
           <div>
