@@ -1,16 +1,4 @@
-## README: Enhanced Version
-
----
-
-## 📌 Table of Contents
-1. [Introduction](#introduction)
-2. [Getting Started](#getting-started)
-3. [Architecture Overview](#architecture-overview)
-4. [Production Build](#production-build)
-5. [Running in Chrome](#running-in-chrome)
-6. [Contributing](#contributing)
-7. [Running Local Llama](#running-local-llama)
-8. [Tech Stack](#tech-stack)
+## Chat with page
 
 ---
 

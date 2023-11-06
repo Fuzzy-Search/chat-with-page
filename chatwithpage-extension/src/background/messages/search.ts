@@ -46,7 +46,6 @@ async function hasDocument() {
 const handler: PlasmoMessaging.MessageHandler = async (req, res) => {
     const text = req.body.text;
     const url = req.body.url;
-    console.log("search.ts: message: ", text, url)
     try {
         const queryEmbedding = await createOffscreenDocument(text, url);
         // search through the database
