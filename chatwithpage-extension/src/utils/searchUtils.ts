@@ -4,10 +4,6 @@ import { processText, highlightText, clearHighlights }  from "~utils/tools"
 
 
 
-import CheckSupabaseSubscription from "~pages/api/check-subscription";
-
-
-
 
 
 const storage = new Storage()
@@ -29,39 +25,7 @@ export async function getUsageCount(): Promise<number> {
   return count
 }
 
-export async function checkSubscription(): Promise<boolean> {
-  console.log("Subscription Status ...")
-  const subscription = await storage.get("subscription")
-  const lastChecked = await storage.get("lastChecked")
-  const lastCheckedDate = new Date(lastChecked).getTime()
-  const currentTime = new Date().getTime()
-  const diffTime = Math.abs(currentTime - lastCheckedDate)
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
-  if (subscription === "true"){
-    if (diffDays < 3) {
-      return true
-    } else {
-      if (await CheckSupabaseSubscription()) {
-        return true
-      }
-      else {
-        return false
-      }
-    }
 
-  } else {
-    if (await CheckSupabaseSubscription()) {
-      await storage.set("subscription", "true")
-      await storage.set("lastChecked", new Date().toISOString())
-      return true
-    } else {
-      return false
-    }
-  }
-}
-
-
-// export async function checkSubscription(): Promise<boolean> {
 export async function handleSemanticSearch(
     searchText: string,
     setProgress: (progress: number) => void,

@@ -37,7 +37,7 @@ export const SearchOnPageForm = ({ initialPrompt }: SearchFormProps) => {
   const [input, setInput] = useState<string>("")
   const [searchResults, setSearchResults] = useState<any[]>([])
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
-  const [isError, setIsError] = useState<boolean>(true)
+  const [isError, setIsError] = useState<boolean>(false)
   const [openAIKey, setOpenAIKey] = useState("")
   const [showSuccess, setShowSuccess] = useState(false)
   const mailPort = usePort("aiport")
