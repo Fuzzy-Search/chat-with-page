@@ -6,6 +6,10 @@
 Welcome Developers and Contributors! This README is designed to provide a structured guide to help you dive into this project seamlessly.
 
 ---
+## preview
+<img width="500" alt="D1F69FD7-4118-4B30-96D3-CDAEC90BE33E" src="https://github.com/Fuzzy-Search/chat-with-page/assets/40468118/399f486a-6f61-43ca-ba8e-d87968306832">
+<img width="500" alt="D1F69FD7-4118-4B30-96D3-CDAEC90BE33E" src="https://github.com/Fuzzy-Search/chat-with-page/assets/40468118/c864d533-b968-4e00-9fa8-37108e28fb80">
+
 
 
 # 🖥 Installing extension in Chrome
