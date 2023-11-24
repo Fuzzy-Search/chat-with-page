@@ -59,13 +59,16 @@ export const SearchOnPageForm = ({ initialPrompt }: SearchFormProps) => {
   useEffect(() => {
     if (mailPort.data?.message) {
       setIsSubmitting(false)
-      setIsError(false)
     }
+    setIsError(false)
   }, [mailPort.data?.message])
 
   useEffect(() => {
-    if (mailPort.data?.error) {
+    if (mailPort.data?.error !== undefined && mailPort.data?.error !== null) {
+      console.log(mailPort.data)
       setIsError(true)
+    } else {
+      setIsError(false)
     }
   }, [mailPort.data?.error])
 
@@ -86,6 +89,7 @@ export const SearchOnPageForm = ({ initialPrompt }: SearchFormProps) => {
     chrome.storage.local.set({ openAIKey: openAIKey })
     console.log("OpenAI Key saved successfully to, ", openAIKey)
     setShowSuccess(true)
+    setIsError(false)
   }
   const handleKeyChange = (event) => {
     setOpenAIKey(event.target.value)

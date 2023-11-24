@@ -1,7 +1,7 @@
 {
   "name": "fuzzy-search",
-  "displayName": "Fuzzy search. AI search",
-  "version": "0.0.6",
+  "displayName": "Chat with page. Free & open source",
+  "version": "0.0.7",
   "description": "Perform a fuzzy search on the current page.",
   "author": "Robert Lukoshko",
   "scripts": {
@@ -124,10 +124,10 @@
     "commands": {
       "dosearch": {
         "suggested_key": {
-          "default": "Ctrl+G",
-          "windows": "Ctrl+G",
-          "mac": "Command+G",
-          "linux": "Ctrl+G"
+          "default": "Alt+G",
+          "windows": "Alt+G",
+          "mac": "Alt+G",
+          "linux": "Alt+G"
         },
         "description": "SHORTCUT: Show search | Modify it 👉"
       }

@@ -53,7 +53,7 @@ export function CardDemo({ className, ...props }: CardProps) {
       </CardHeader>
 
       <CardContent className="grid gap-4">
-        <CardTitle className="text-5xl text-center">⌘ + G</CardTitle>
+        <CardTitle className="text-5xl text-center">⌥/Alt + G</CardTitle>
       </CardContent>
 
       <CardContent className="grid gap-4">

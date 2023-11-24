@@ -43,10 +43,10 @@ const handler: PlasmoMessaging.PortHandler = async (req, res) => {
     const response = await createChatCompletion(query, context)
     response.on("content", (delta, snapshot) => {
       cumulativeDelta += delta
-      res.send({ message: cumulativeDelta })
+      res.send({ message: cumulativeDelta, error: "" })
     })
   } catch (error) {
-    res.send({ error: error.message })
+    res.send({ error: "something went wrong" })
   }
 }
 

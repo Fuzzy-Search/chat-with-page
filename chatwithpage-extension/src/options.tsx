@@ -27,7 +27,7 @@ function AuthenticationPage() {
         </CardHeader>
 
         <CardContent className="grid gap-4">
-          <CardTitle className="text-5xl text-center">⌘ + G</CardTitle>
+          <CardTitle className="text-5xl text-center">⌥/Alt + G</CardTitle>
         </CardContent>
         <span>this page will not work as its part of the extension</span>
       </Card>
