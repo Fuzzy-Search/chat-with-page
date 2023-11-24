@@ -2,6 +2,9 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+body {
+  font-family: Arial, sans-serif;
+}
 
 body {
   filter: url(#dim-filter);
