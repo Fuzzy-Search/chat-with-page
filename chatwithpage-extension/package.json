@@ -81,10 +81,8 @@
   },
   "manifest": {
     "permissions": [
-      "tabs",
       "storage",
       "activeTab",
-      "scripting",
       "offscreen"
     ],
     "content_security_policy": {
