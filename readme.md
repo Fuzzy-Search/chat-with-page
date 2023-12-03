@@ -1,4 +1,8 @@
-## Chat with page
+# Chat with page
+
+
+<a href='https://chromewebstore.google.com/detail/ogdhdjehhjkjdfefbmlfclpokchidfge'> ![HRs9MPufa1J1h5glNhut](https://github.com/Fuzzy-Search/chat-with-page/assets/40468118/68011b90-7026-4032-98bb-fed2250183d4)
+</a>
 
 ---
 
